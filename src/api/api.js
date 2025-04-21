@@ -4,7 +4,7 @@ const { getCards, getPaginationButton, getPaginationCount } = require('./helpers
 
 const ongoingSeries = async (page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/sedang-tayang/?halaman=${page}`);
+    const res = await fetch(`${url.BASE_URL}/anime-sedang-tayang-baru/?halaman=${page}`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
@@ -148,7 +148,7 @@ const animeEpisode = async (slug) => {
 
 const search = async (keyword, page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/page/${page}/?s=${keyword}`);
+    const res = await fetch(`${url.BASE_URL}/?page=${page}#terupdate`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
@@ -168,7 +168,7 @@ const search = async (keyword, page) => {
 
 const genre = async (slug, page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/genre/${slug}/page/${page}`);
+    const res = await fetch(`${url.BASE_URL}/genre/${slug}`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
@@ -188,7 +188,7 @@ const genre = async (slug, page) => {
 
 const characterType = async (slug, page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/karakter/${slug}/page/${page}`);
+    const res = await fetch(`${url.BASE_URL}/karakter/${slug}`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
@@ -208,7 +208,7 @@ const characterType = async (slug, page) => {
 
 const movies = async (page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/movie/?halaman=${page}`);
+    const res = await fetch(`${url.BASE_URL}/anime-movie/?halaman=${page}`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
@@ -227,7 +227,7 @@ const movies = async (page) => {
 
 const filterList = async (query, page) => {
   try {
-    const res = await fetch(`${url.BASE_URL}/pencarian/?halaman=${page}&${query}`);
+    const res = await fetch(`${url.BASE_URL}/page/${page}/?s=${query}`);
     const body = await res.text();
     const $ = cheerio.load(body);
     const data = {
