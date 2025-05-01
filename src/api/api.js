@@ -31,7 +31,7 @@ const animeDetails = async (slug) => {
   
     $('div.bigcontent').each((index, element) => {
       const el = $(element);
-      const img = el.find('div.bixbox.animefull div.bigcontent div.thumb img').attr('src');
+      const img = el.find('div.thumb img').attr('src');
       const title = el.find('div.infox h1').text().trim();
       const name = el.find('div.infox span.alter').text().trim();
       const status = el.find('div.infox div.spe span b:contains("Status:")').first().parent().text().replace('Status: ', '');
