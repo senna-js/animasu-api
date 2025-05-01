@@ -33,7 +33,7 @@ const animeDetails = async (slug) => {
       const el = $(element);
       const img = el.find('div.thumb img').attr('src');
       const title = el.find('div.infox h1').text().trim();
-      const name = el.find('div.infox span.alter').text().trim();
+      const name = el.find('div.infox div.sepele').text().trim();
       const status = el.find('div.infox div.spe span b:contains("Status:")').first().parent().text().replace('Status: ', '');
       const type = el.find('div.infox div.spe span b:contains("Jenis:")').first().parent().text().replace('Jenis: ', '');
       const release = el.find('div.infox div.spe span b:contains("Rilis:")').first().parent().text().replace('Rilis: ', '');
